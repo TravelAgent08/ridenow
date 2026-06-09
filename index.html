@@ -142,3 +142,67 @@ window.open(
 
 </body>
 </html>
+<script>
+function bookRide() {
+    let pickup = document.getElementById("pickup").value;
+    let drop = document.getElementById("drop").value;
+    let vehicle = document.getElementById("vehicle").value;
+
+    if (!pickup || !drop || !vehicle) {
+        alert("Please fill all details");
+        return;
+    }
+
+    document.getElementById("status").style.display = "block";
+    document.getElementById("status").innerHTML =
+        "<h2>🔍 Connecting with Driver...</h2><p>Searching nearby riders...</p>";
+
+    setTimeout(() => {
+        document.getElementById("status").innerHTML =
+            "<h2>✅ Driver Found!</h2><p>Driver will contact you shortly.</p>";
+
+        setTimeout(() => {
+            let message =
+                `🚖 Ride Booking\n\n📍 Pickup: ${pickup}\n🏁 Drop: ${drop}\n🚗 Vehicle: ${vehicle}`;
+
+            let whatsappURL =
+                `https://wa.me/918077531962?text=${encodeURIComponent(message)}`;
+
+            window.location.href = whatsappURL;
+        }, 3000);
+
+    }, 5000);
+}
+</script>
+<script>
+function bookRide() {
+    let pickup = document.getElementById("pickup").value;
+    let drop = document.getElementById("drop").value;
+    let vehicle = document.getElementById("vehicle").value;
+
+    if (!pickup || !drop || !vehicle) {
+        alert("Please fill all details");
+        return;
+    }
+
+    document.getElementById("status").style.display = "block";
+    document.getElementById("status").innerHTML =
+        "<h2>🔍 Connecting with Driver...</h2><p>Searching nearby riders...</p>";
+
+    setTimeout(() => {
+        document.getElementById("status").innerHTML =
+            "<h2>✅ Driver Found!</h2><p>Driver will contact you shortly.</p>";
+
+        setTimeout(() => {
+            let message =
+                `🚖 Ride Booking\n\n📍 Pickup: ${pickup}\n🏁 Drop: ${drop}\n🚗 Vehicle: ${vehicle}`;
+
+            let whatsappURL =
+                `https://wa.me/918077531962?text=${encodeURIComponent(message)}`;
+
+            window.location.href = whatsappURL;
+        }, 3000);
+
+    }, 5000);
+}
+</script>
