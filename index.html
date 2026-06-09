@@ -1,4 +1,206 @@
-<!DOCTYPE html>
+<!D<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ride Now - Business Prototype</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#f4f4f4;
+}
+
+header{
+background:#ffcc00;
+padding:25px;
+text-align:center;
+}
+
+section{
+margin:20px;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin-top:5px;
+box-sizing:border-box;
+}
+
+button{
+padding:12px 18px;
+background:#25D366;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+td,th{
+border:1px solid #ddd;
+padding:8px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Ride Now</h1>
+<p>Ghaziabad - Modinagar Ride Service</p>
+<p>Founder: Sumit Chaudhary</p>
+</header>
+
+<section>
+<h2>Book Ride</h2>
+
+<input id="pickup" placeholder="Pickup Location"><br><br>
+
+<input id="drop" placeholder="Drop Location"><br><br>
+
+<select id="vehicle">
+<option>Bike</option>
+<option>Auto</option>
+<option>Cab</option>
+</select>
+
+<br><br>
+
+<button onclick="bookRide()">Request Ride (Cash Payment)</button>
+</section>
+
+<section>
+<h2>Driver Registration</h2>
+
+<input placeholder="Name"><br><br>
+<input placeholder="Mobile"><br><br>
+<input placeholder="Aadhaar"><br><br>
+<input placeholder="Driving Licence"><br><br>
+<input placeholder="Vehicle Number"><br><br>
+
+<button onclick="alert('Registration Submitted Successfully')">
+Submit
+</button>
+</section>
+
+<section>
+<h2>Admin Dashboard (Sumit)</h2>
+
+<table>
+<tr>
+<th>Driver</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Sample Driver</td>
+<td>Approved</td>
+</tr>
+</table>
+</section>
+
+<section>
+<h2>Service Area</h2>
+<p>Ghaziabad, Modinagar, Muradnagar and nearby areas.</p>
+</section>
+
+<script>
+function bookRide(){
+
+let pickup=document.getElementById("pickup").value;
+let drop=document.getElementById("drop").value;
+let vehicle=document.getElementById("vehicle").value;
+
+let message=
+"Ride Booking%0A" +
+"Pickup: " + pickup + "%0A" +
+"Drop: " + drop + "%0A" +
+"Vehicle: " + vehicle;
+
+window.open(
+"https://wa.me/918077531962?text=" + message,
+"_blank"
+);
+}
+</script>
+
+</body>
+</html>
+<script>
+function bookRide() {
+    let pickup = document.getElementById("pickup").value;
+    let drop = document.getElementById("drop").value;
+    let vehicle = document.getElementById("vehicle").value;
+
+    if (!pickup || !drop || !vehicle) {
+        alert("Please fill all details");
+        return;
+    }
+
+    document.getElementById("status").style.display = "block";
+    document.getElementById("status").innerHTML =
+        "<h2>🔍 Connecting with Driver...</h2><p>Searching nearby riders...</p>";
+
+    setTimeout(() => {
+        document.getElementById("status").innerHTML =
+            "<h2>✅ Driver Found!</h2><p>Driver will contact you shortly.</p>";
+
+        setTimeout(() => {
+            let message =
+                `🚖 Ride Booking\n\n📍 Pickup: ${pickup}\n🏁 Drop: ${drop}\n🚗 Vehicle: ${vehicle}`;
+
+            let whatsappURL =
+                `https://wa.me/918077531962?text=${encodeURIComponent(message)}`;
+
+            window.location.href = whatsappURL;
+        }, 3000);
+
+    }, 5000);
+}
+</script>
+<script>
+function bookRide() {
+    let pickup = document.getElementById("pickup").value;
+    let drop = document.getElementById("drop").value;
+    let vehicle = document.getElementById("vehicle").value;
+
+    if (!pickup || !drop || !vehicle) {
+        alert("Please fill all details");
+        return;
+    }
+
+    document.getElementById("status").style.display = "block";
+    document.getElementById("status").innerHTML =
+        "<h2>🔍 Connecting with Driver...</h2><p>Searching nearby riders...</p>";
+
+    setTimeout(() => {
+        document.getElementById("status").innerHTML =
+            "<h2>✅ Driver Found!</h2><p>Driver will contact you shortly.</p>";
+
+        setTimeout(() => {
+            let message =
+                `🚖 Ride Booking\n\n📍 Pickup: ${pickup}\n🏁 Drop: ${drop}\n🚗 Vehicle: ${vehicle}`;
+
+            let whatsappURL =
+                `https://wa.me/918077531962?text=${encodeURIComponent(message)}`;
+
+        OCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
